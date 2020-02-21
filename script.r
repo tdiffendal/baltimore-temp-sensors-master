@@ -17,7 +17,8 @@ stephanie <- read_csv("input_files/raw_sensor_data/20190730_BC29_Stephanie.csv")
 #### Build the function to ingest, clean, analyze, build graphs, write out excel files and graphs. 
 process_sensors <- function(person_location) {
     # create temporary object with clean column names
-    temp <<- clean_names(person_location) 
+    temp <<- choose.file() %>%
+      clean_names() 
     # parse date objects and remove unneeded columns
     temp <<- temp %>%  
       # select(-x8,-x9,-x10,-x11) %>%
